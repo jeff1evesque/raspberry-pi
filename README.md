@@ -7,23 +7,11 @@ The Raspberry Pi is a credit-card sized computer containing at least 1 USB slot,
 
 Since the inception of the Raspberry Pi, model A in February 2012, there have been two additional models made available.  The model B, as well as the model B+.  The major schematic between all models are as follows:
 
-#####Model A
-
-<div>700 MHz Processor</div>
-<div>256 MB SDRAM</div>
-<div>Single USB Port</div>
-
-#####Model B
-
-<div>700 MHz Processor</div>
-<div>512 MB SDRAM</div>
-<div>Dual USB Ports</div>
-
-#####Model B+
-
-<div>700 MHz Processor</div>
-<div>512 MB SDRAM</div>
-<div>Quad USB Ports</div>
+                | Model A       | Model B       | Model B+       |
+---------------:| --------------|:-------------:| --------------:|
+**Processor**   | 700 MHz       | 700 MHz       | 700 MHz        |
+**RAM**         | 256 MB        | 512 MB        | 512 MB         |
+**USB Ports**   | Single USB    | Dual USB      | Quad USB       |
 
 ###Overview
 
