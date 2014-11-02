@@ -13,7 +13,7 @@ The major schematic are as follows:
 **RAM**         | 256 MB        | 512 MB        | 512 MB         |
 **USB Ports**   | Single USB    | Dual USB      | Quad USB       |
 
-Numerous *linux-based* operating systems can be run on the Raspberry Pi. The Rasbian generally is generally preferred, since it is tailored specific to the Pi.  Other operating systems such as Rice, Plan 9, and Arch is just as savy.  And, though not recommended, linux distributions such as Ubuntu will work.  Though, the requirements of such operating systems tend to require more resources than the Pi has to offer (so grab an older distro).
+Numerous *linux-based* operating systems can be run on the Raspberry Pi. The Rasbian is generally preferred, since it is tailored specific to the Pi.  Other operating systems such as Rice, Plan 9, and Arch is just as savy.  Though, not recommended, linux distributions such as Ubuntu will work.  Keep in mind, the requirements of such operating systems tend to require more resources than the Pi has to offer (so grab an older distro).
 
 ###Overview
 
