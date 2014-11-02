@@ -3,7 +3,7 @@ Raspberry Pi
 
 ###Definition
 
-The Raspberry Pi is a credit-card sized computer containing at least 1 USB slot, which can be used for to connect to any USB device containing a linux driver:
+The Raspberry Pi is a credit-card sized computer containing at least 1 USB slot, which can be used for any USB device containing a linux driver.
 
 Since the inception of the Raspberry Pi, model A in February 2012, there have been two additional models made available.  The model B, as well as the model B+.  The major schematic between all models are as follows:
 
