@@ -1,2 +1,2 @@
-raspberry-pi
+Raspberry Pi
 ============
