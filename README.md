@@ -21,6 +21,14 @@ Numerous [*linux-based*](http://en.wikipedia.org/wiki/Linux) operating systems c
 
 ###Linux Packages
 
+The following packages need to be installed through terminal in Ubuntu:
+
+```
+# Python Package Manager
+sudo apt-get install python-setuptools
+sudo easy_install pip
+```
+
 ##Configuration
 
 ###GIT
