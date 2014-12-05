@@ -74,6 +74,10 @@ sudo apt-get install mariadb-server mariadb-client
 
 ###File Permission
 
+###SD Card
+
+The SD Card is an important and integral part of the Raspberry Pi. When a power supply is provided, the Raspberry Pi seeks a boot loader partition from an SD Card. If either the SD Card is not present, or if the boot loader partition is missing, the Raspberry Pi will not start-up.
+
 ##Testing / Execution
 
 ###Test Scripts
