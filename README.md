@@ -105,16 +105,10 @@ $ diskutil list
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:     Apple_partition_scheme                        *27.9 MB    disk1
    1:        Apple_partition_map                         32.3 KB    disk1s1
-   2:                  Apple_HFS src/sqlitebrowser       27.8 MB    disk1s2
 /dev/disk2
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:     FDisk_partition_scheme                        *7.8 GB     disk2
    1:                 DOS_FAT_32 SD-RPI                  7.8 GB     disk2s1
-/dev/disk4
-   #:                       TYPE NAME                    SIZE       IDENTIFIER
-   0:     FDisk_partition_scheme                        *64.0 GB    disk4
-   1:                 DOS_FAT_32 USB-RPI-1               32.0 GB    disk4s1
-   2:                 DOS_FAT_32 USB-RPI-2               32.0 GB    disk4s2
 
 # copy 'Raspbian' image to SD card
 $ sudo diskutil unmountDisk /dev/disk2
