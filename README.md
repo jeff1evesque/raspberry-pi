@@ -38,6 +38,8 @@ sudo apt-get install phpmyadmin
 sudo apt-get install python-mysqldb
 ```
 
+**Note:** This project assumes [Raspbian](www.raspbian.org) as the operating system.
+
 ##Configuration
 
 ###GIT
