@@ -38,13 +38,13 @@ sudo apt-get install phpmyadmin
 sudo apt-get install python-mysqldb
 ```
 
-**Note:** This project assumes [Raspbian](www.raspbian.org) as the operating system. Specifically, the Raspbian *Wheezy* distribution has been selected. To select the *jessie* distribution, modify the following:
+**Note:** This project assumes [Raspbian](http://www.raspbian.org) as the operating system. Specifically, the Raspbian [*Wheezy*](http://raspberrypi.org/debian-wheezy-public-beta/) distribution has been selected. To select the [*jessie*](http://www.raspberrypi.org/forums/viewtopic.php?f=66&t=47944) distribution, modify the following:
 
 ```
 sudo pico /etc/apt/sources.list
 ```
 
-by changing the reference(s) of [`wheezy`](www.raspberrypi.org/debian-wheezy-public-beta/) to [`jessie`](www.raspberrypi.org/forums/viewtopic.php?f=66&t=47944). Then, simply upgrade the distribution (since it's newer):
+by changing the reference(s) of [`wheezy`](http://www.raspberrypi.org/debian-wheezy-public-beta/) to [`jessie`](http://www.raspberrypi.org/forums/viewtopic.php?f=66&t=47944). Then, simply upgrade the distribution (since it's newer):
 
 ```
 sudo apt-get dist-upgrade
