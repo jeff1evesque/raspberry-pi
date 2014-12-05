@@ -21,7 +21,7 @@ Numerous [*linux-based*](http://en.wikipedia.org/wiki/Linux) operating systems c
 
 ###Linux Packages
 
-The following packages need to be installed through terminal in Ubuntu:
+The following packages need to be installed through terminal:
 
 ```
 # Python Package Manager:
