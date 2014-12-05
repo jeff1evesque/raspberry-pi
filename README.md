@@ -78,7 +78,7 @@ sudo apt-get install mariadb-server mariadb-client
 
 The [SD Card](http://en.wikipedia.org/wiki/Secure_Digital) is an important and integral part of the [Raspberry Pi](http://en.wikipedia.com/wiki/Raspberry_Pi). When a [power supply](http://www.raspberrypi.org/help/faqs/#power) is provided, the Raspberry Pi seeks a [boot loader](http://en.wikipedia.org/wiki/Booting#BOOT-LOADER) [partition](http://en.wikipedia.org/wiki/Disk_partitioning) from its SD Card slot. If either the SD Card, or boot loader partition is absent, the Raspberry Pi will not start-up.
 
-To ensure the presence of a *boot loader* partition, an acceptable [linux distribution](http://en.wikipedia.org/wiki/Linux_distribution) [image](http://www.raspberrypi.org/documentation/installation/installing-images/) must be placed on the SD Card. The following are the necessary steps to add the Raspbian (Wheezy) image:
+To ensure the presence of a *boot loader* partition, an acceptable [linux distribution](http://en.wikipedia.org/wiki/Linux_distribution) [image](http://www.raspberrypi.org/documentation/installation/installing-images/) must be placed on the SD Card. The following are the necessary steps to add the Raspbian ([Wheezy](http://www.raspberrypi.org/debian-wheezy-public-beta/) image:
 
 ```
 # create temporary directory
