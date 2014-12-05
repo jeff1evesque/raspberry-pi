@@ -38,7 +38,19 @@ sudo apt-get install phpmyadmin
 sudo apt-get install python-mysqldb
 ```
 
-**Note:** This project assumes [Raspbian](www.raspbian.org) as the operating system.
+**Note:** This project assumes [Raspbian](www.raspbian.org) as the operating system. Specifically, the Raspbian *Wheezy* distribution has been selected. To select the *jessie* distribution, modify the following:
+
+```
+sudo pico /etc/apt/sources.list
+```
+
+by changing the reference of `wheezy` to `jessie`. Then, simply upgrade the distribution (since it's newer):
+
+```
+sudo apt-get dist-upgrade
+```
+
+This will allow the use of MariaDB, instead of its predecessor MySQL.
 
 ##Configuration
 
