@@ -133,7 +133,7 @@ $ sudo rm -rf /raspbian/
 
 **Note:** the last command *may* take up to [`20mins`](http://www.raspberrypi.org/forums/viewtopic.php?f=66&t=21995#p309093), with [`pv`](http://linux.die.net/man/1/pv) having a transfer range between `3.9-5.23MiB/s`.
 
-**Note:** if `bs=1m` was included only before the first pipe, or if it was completely excluded, the transfer rate would have varied between `660-740KiB/s`.
+**Note:** if `bs=1m` was included only before the first pipe, or if it was completely excluded, the [transfer rate](http://en.wikipedia.org/wiki/Data_rate_units) would have varied between `660-740KiB/s`.
 
 **Note:** if `sudo dd of=/dev/disk2` was used instead of `sudo dd of=/dev/rdisk2`, the transfer rate would have been roughly `1MiB/s`.
 
