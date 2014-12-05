@@ -21,12 +21,49 @@ Numerous [*linux-based*](http://en.wikipedia.org/wiki/Linux) operating systems c
 
 ###Linux Packages
 
-The following packages need to be installed through terminal in Ubuntu:
+The following packages need to be installed through terminal:
 
 ```
-# Python Package Manager
+# Python Package Manager:
 sudo apt-get install python-setuptools
 sudo easy_install pip
+
+# LAMP (with phpmyadmin):
+sudo apt-get install apache2
+sudo apt-get install mysql-server mysql-client
+sudo apt-get install php5 php5-mysql libapache2-mod-php5
+sudo apt-get install phpmyadmin
+
+# Python MySQL Driver:
+sudo apt-get install python-mysqldb
+```
+
+**Note:** This project assumes [Raspbian](http://www.raspbian.org) (i.e. [Wheezy](http://raspberrypi.org/debian-wheezy-public-beta/)) as the operating system. To upgrade to the newer [Jessie](http://www.raspberrypi.org/forums/viewtopic.php?f=66&t=47944) distribution, modify the following:
+
+```
+sudo pico /etc/apt/sources.list
+```
+
+by changing any reference(s) of [`wheezy`](http://www.raspberrypi.org/debian-wheezy-public-beta/) to [`jessie`](http://www.raspberrypi.org/forums/viewtopic.php?f=66&t=47944). Then, upgrade the distribution:
+
+```
+sudo apt-get dist-upgrade
+```
+
+The above *upgrade* would allow the use of [MariaDB](https://mariadb.org), in place of its predecessor [MySQL](http://www.mysql.com). Therefore, the above:
+
+```
+...
+sudo apt-get install mysql-server mysql-client
+...
+```
+
+would be replaced by the following:
+
+```
+...
+sudo apt-get install mariadb-server mariadb-client
+...
 ```
 
 ##Configuration
