@@ -128,11 +128,11 @@ $ sudo dd if=2014-09-09-wheezy-raspbian.img | sudo pv | sudo dd of=/dev/rdisk2 b
 3276800000 bytes transferred in 646.141940 secs (5071332 bytes/sec)
 ```
 
-**Note:** the last command *may* take up to 20mins. The above execution of copying the raspbian image, pv had a transfer range of roughly 3.9-5.23MiB/s.
+**Note:** the last command *may* take up to `20mins`. The above execution of copying the raspbian image, `pv` had a transfer range of roughly `3.9-5.23MiB/s`.
 
-**Note:** if `bs=1m` was included only before the first pipe, or if it was completely excluded, the transfer rate would have varied between 660-740KiB/s.
+**Note:** if `bs=1m` was included only before the first pipe, or if it was completely excluded, the transfer rate would have varied between `660-740KiB/s`.
 
-**Note:** if `sudo dd of=/dev/disk2` was used instead of `sudo dd of=/dev/rdisk2`, the speed would have bee about 1MiB/s (1/5 the original speed).
+**Note:** if `sudo dd of=/dev/disk2` was used instead of `sudo dd of=/dev/rdisk2`, the speed would have bee about `1MiB/s` (1/5 the original speed).
 
 ##Testing / Execution
 
