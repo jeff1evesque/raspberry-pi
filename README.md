@@ -126,6 +126,9 @@ $ sudo dd if=2014-09-09-wheezy-raspbian.img | sudo pv | sudo dd of=/dev/rdisk2 b
 0+50000 records in
 0+50000 records out
 3276800000 bytes transferred in 646.141940 secs (5071332 bytes/sec)
+
+# delete temporary directory
+$ sudo rm -rf /raspbian/
 ```
 
 **Note:** the last command *may* take up to [`20mins`](http://www.raspberrypi.org/forums/viewtopic.php?f=66&t=21995#p309093), with [`pv`](http://linux.die.net/man/1/pv) having a transfer range between `3.9-5.23MiB/s`.
