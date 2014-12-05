@@ -44,7 +44,7 @@ sudo apt-get install python-mysqldb
 sudo pico /etc/apt/sources.list
 ```
 
-by changing any reference(s) of [`wheezy`](http://www.raspberrypi.org/debian-wheezy-public-beta/) to [`jessie`](http://www.raspberrypi.org/forums/viewtopic.php?f=66&t=47944). Then, simply upgrade the distribution (since it's newer):
+by changing any reference(s) of [`wheezy`](http://www.raspberrypi.org/debian-wheezy-public-beta/) to [`jessie`](http://www.raspberrypi.org/forums/viewtopic.php?f=66&t=47944). Then, upgrade the distribution:
 
 ```
 sudo apt-get dist-upgrade
