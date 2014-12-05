@@ -44,13 +44,13 @@ sudo apt-get install python-mysqldb
 sudo pico /etc/apt/sources.list
 ```
 
-by changing the reference of `wheezy` to `jessie`. Then, simply upgrade the distribution (since it's newer):
+by changing the reference(s) of `wheezy` to `jessie`. Then, simply upgrade the distribution (since it's newer):
 
 ```
 sudo apt-get dist-upgrade
 ```
 
-This will allow the use of MariaDB, instead of its predecessor MySQL.
+This will allow the use of MariaDB, in place of its predecessor MySQL.
 
 ##Configuration
 
