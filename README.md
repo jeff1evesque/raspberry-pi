@@ -44,13 +44,13 @@ sudo apt-get install python-mysqldb
 sudo pico /etc/apt/sources.list
 ```
 
-by changing the reference(s) of `wheezy` to `jessie`. Then, simply upgrade the distribution (since it's newer):
+by changing the reference(s) of [`wheezy`](www.raspberrypi.org/debian-wheezy-public-beta/) to [`jessie`](www.raspberrypi.org/forums/viewtopic.php?f=66&t=47944). Then, simply upgrade the distribution (since it's newer):
 
 ```
 sudo apt-get dist-upgrade
 ```
 
-This will allow the use of MariaDB, in place of its predecessor MySQL.
+This will allow the use of [MariaDB](https://mariadb.org), in place of its predecessor [MySQL](www.mysql.com).
 
 ##Configuration
 
