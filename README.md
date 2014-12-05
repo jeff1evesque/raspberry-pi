@@ -27,6 +27,15 @@ The following packages need to be installed through terminal in Ubuntu:
 # Python Package Manager
 sudo apt-get install python-setuptools
 sudo easy_install pip
+
+# LAMP (with phpmyadmin):
+sudo apt-get install apache2
+sudo apt-get install mysql-server mysql-client
+sudo apt-get install php5 php5-mysql libapache2-mod-php5
+sudo apt-get install phpmyadmin
+
+# Python MySQL Driver:
+sudo apt-get install python-mysqldb
 ```
 
 ##Configuration
