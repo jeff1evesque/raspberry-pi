@@ -50,7 +50,22 @@ by changing the reference(s) of [`wheezy`](http://www.raspberrypi.org/debian-whe
 sudo apt-get dist-upgrade
 ```
 
-This will allow the use of [MariaDB](https://mariadb.org), in place of its predecessor [MySQL](http://www.mysql.com).
+This will allow the use of [MariaDB](https://mariadb.org), in place of its predecessor [MySQL](http://www.mysql.com). Therefore, in place of the above:
+
+```
+...
+sudo apt-get install mysql-server mysql-client
+...
+```
+
+we would have the following:
+
+```
+...
+sudo apt-get install mariadb-server mariadb-client
+...
+```
+
 
 ##Configuration
 
