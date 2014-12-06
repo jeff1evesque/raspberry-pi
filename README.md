@@ -133,7 +133,7 @@ $ sudo rm -rf /raspbian/
 
 ###USB System Partition
 
-The system partition is the disk partition that contains the operating system folder, known as system root. By default, in Linux, operating system files are mounted at `/` (the root directory).
+The system partition is the disk partition that contains the [operating system](http://en.wikipedia.org/wiki/Operating_system) folder, known as system root. By default, in Linux, operating system files are mounted at `/` (the [root directory](http://en.wikipedia.org/wiki/Root_directory)).
 
 ##Testing / Execution
 
