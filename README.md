@@ -177,13 +177,13 @@ cd /Volumes/boot/
 sudo pico cmdline.txt
 ```
 
-**Note:** the above commands were performed on OSX. On linux distributions, navigate to the `/media/boot/` subdirectory to modify `cmdline.txt`.
+**Note:** the above commands were performed on OSX. On linux distributions, navigate to the `/media/boot/` subdirectory, and modify `cmdline.txt`.
 
-Then, modfiy the following:
+Next, modfiy the contents of `cmdline.txt`:
 
-'''
+```
 dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait
-'''
+```
 
 by changing the `root` variable as follows:
 
