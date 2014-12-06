@@ -135,6 +135,8 @@ $ sudo rm -rf /raspbian/
 
 The system partition is the disk partition that contains the [operating system](http://en.wikipedia.org/wiki/Operating_system) folder, known as system root. By default, in Linux, operating system files are mounted at `/` (the [root directory](http://en.wikipedia.org/wiki/Root_directory)).
 
+- http://en.wikipedia.org/wiki/System_partition_and_boot_partition#Common_definition
+
 ##Testing / Execution
 
 ###Test Scripts
