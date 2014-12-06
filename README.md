@@ -170,7 +170,7 @@ $ sudo dd if=2014-09-09-wheezy-raspbian.img | sudo pv | sudo dd of=/dev/rdisk4s1
 3276800000 bytes transferred in 650.881670 secs (5034402 bytes/sec)
 ```
 
-Once the USB flash drive contains a system partition, specifically the *Raspbian* operating system, the boot loader partition needs to know where this image is located. In terminal, open `cmdline.txt` from the earlier configured SD Card (boot partition):
+Once the USB flash drive contains a system partition, specifically the *Raspbian* operating system, the boot loader partition on the SD card, needs to know where this system partition is located. In terminal, open `cmdline.txt` from the earlier configured SD Card (boot partition):
 
 ```
 cd /Volumes/boot/
