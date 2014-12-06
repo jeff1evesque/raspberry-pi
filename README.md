@@ -191,6 +191,8 @@ by changing the `root` variable as follows:
 dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/sda2 rootfstype=ext4 elevator=deadline rootwait
 ```
 
+This modifies the boot sequence, and tells the Raspberry Pi to boot the system partition from the USB flash drive, instead of the SD card. After the Raspberry Pi has booted, the SD card could be removed, or unmounted from the Raspberry Pi. This means, the SD card is only needed during the initial raspberry pi boot.
+
 ##Testing / Execution
 
 ###Test Scripts
