@@ -137,9 +137,9 @@ The system partition is the disk partition that contains the [operating system](
 
 - http://en.wikipedia.org/wiki/System_partition_and_boot_partition#Common_definition
 
-The Raspberry Pi requires the *boot loader* partition to be located on the SD Card. However, the *system partition* can be stored on another medium, such as the USB flash drive. 
+The Raspberry Pi requires the *boot loader* partition to be located on the SD card. However, the *system partition* can be stored on another medium, such as the USB flash drive. 
 
-The steps required to install a system partition on a USB flash drive is similar to the SD Card boot partition. Plug in the USB flash drive to a computer, format the drive to `MS-DOS (FAT)`, then open up terminal:
+The steps required to install a system partition on a USB flash drive, is similar to the earlier configured *boot partition* on the SD card. Plug in the USB flash drive to a computer, format the drive to `MS-DOS (FAT)`, then open up terminal:
 
 ```
 $ diskutil list
@@ -177,7 +177,19 @@ cd /Volumes/boot/
 sudo pico cmdline.txt
 ```
 
-**Note:** the above commands were performed on OSX. On linux distributions, navigate to the `/media/` subdirectory, and modify `cmdline.txt`.
+**Note:** the above commands were performed on OSX. On linux distributions, navigate to the `/media/boot/` subdirectory to modify `cmdline.txt`.
+
+Then, modfiy the following:
+
+'''
+dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait
+'''
+
+by changing the `root` variable as follows:
+
+```
+dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/sda2 rootfstype=ext4 elevator=deadline rootwait
+```
 
 ##Testing / Execution
 
