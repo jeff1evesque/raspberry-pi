@@ -131,6 +131,68 @@ $ sudo rm -rf /raspbian/
 
 **Note:** if `sudo dd of=/dev/disk2` was used instead of `sudo dd of=/dev/rdisk2`, the [transfer rate](http://en.wikipedia.org/wiki/Data_rate_units) would have been roughly `1MiB/s`.
 
+###USB System Partition
+
+The system partition is the disk partition that contains the [operating system](http://en.wikipedia.org/wiki/Operating_system) folder, known as system root. By default, in Linux, operating system files are mounted at `/` (the [root directory](http://en.wikipedia.org/wiki/Root_directory)).
+
+- http://en.wikipedia.org/wiki/System_partition_and_boot_partition#Common_definition
+
+The Raspberry Pi requires the *boot loader* partition to be located on the SD card. However, the *system partition* can be stored on any another medium, such as the USB flash drive.
+
+The steps required to install a system partition on a USB flash drive, is similar to the earlier configured *boot partition* on the SD card. Plug in the USB flash drive to a computer, format the drive to `MS-DOS (FAT)`, then open up terminal:
+
+```
+$ diskutil list
+/dev/disk0
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *500.1 GB   disk0
+   1:                        EFI EFI                     209.7 MB   disk0s1
+   2:                  Apple_HFS Macintosh HD            499.2 GB   disk0s2
+   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3
+/dev/disk3
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *3.9 GB     disk3
+   1:             Windows_FAT_32 boot                    58.7 MB    disk3s1
+   2:                      Linux                         3.2 GB     disk3s2
+/dev/disk4
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *64.0 GB    disk4
+   1:                 DOS_FAT_32 USB-RPI-1               64.0 GB    disk4s1
+$ diskutil unmountDisk /dev/disk4
+Unmount of all volumes on disk4 was successful
+$ sudo dd if=2014-09-09-wheezy-raspbian.img | sudo pv | sudo dd of=/dev/rdisk4s1 bs=1m
+6400000+0 records in7MiB/s] [                                                                    <=>]
+6400000+0 records out
+3276800000 bytes transferred in 650.785056 secs (5035149 bytes/sec)
+3.05GiB 0:10:50 [ 4.8MiB/s] [                                                                  <=>  ]
+0+50007 records in
+0+50007 records out
+3276800000 bytes transferred in 650.881670 secs (5034402 bytes/sec)
+```
+
+Once the USB flash drive contains a system partition, specifically the *Raspbian* operating system, the boot loader partition on the SD card, needs to know where this system partition is located. In terminal, open `cmdline.txt` from the earlier configured SD Card (boot partition):
+
+```
+cd /Volumes/boot/
+sudo pico cmdline.txt
+```
+
+**Note:** on linux distributions, navigate to `/media/boot/` subdirectory to modify `cmdline.txt`.
+
+Next, modfiy the contents of `cmdline.txt`:
+
+```
+dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait
+```
+
+by changing the `root` variable as follows:
+
+```
+dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/sda2 rootfstype=ext4 elevator=deadline rootwait
+```
+
+This modifies the boot sequence, and tells the Raspberry Pi to boot the system partition from the USB flash drive, instead of the SD card. By default, the earlier configured SD card would boot the existing Raspbian operating system already on it. Now, after the Raspberry Pi has booted, the SD card could be removed, or unmounted. This means, the SD card is only needed during the initial boot.
+
 ##Testing / Execution
 
 ###Test Scripts
