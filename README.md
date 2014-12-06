@@ -195,7 +195,7 @@ This modifies the boot sequence, and tells the Raspberry Pi to boot the system p
 
 ###MySQL Database
 
-The Raspberry Pi is capable of numerous [database management systems](http://en.wikipedia.org/wiki/Database), like [MySQL](http://www.mysql.com). To ensure better integrity of the database management system, login as `root`, and create a new user.
+The Raspberry Pi is capable of numerous [database management systems](http://en.wikipedia.org/wiki/Database). To ensure better integrity of the database management system, login as `root`, and create a new user.
 
 ```
 $ mysql -u root -p
