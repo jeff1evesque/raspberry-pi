@@ -195,7 +195,7 @@ This modifies the boot sequence, and tells the Raspberry Pi to boot the system p
 
 ###MySQL Database
 
-The Raspberry Pi is [capable](http://www.raspberrypi.org/forums/viewtopic.php?f=32&t=6335) of various [database management systems](http://en.wikipedia.org/wiki/Database). Specifically, [MySQL](http://www.mysql.com) has been chosen in this repository.
+The Raspberry Pi is [capable](http://www.raspberrypi.org/forums/viewtopic.php?f=32&t=6335) of various [database management systems](http://en.wikipedia.org/wiki/Database). Specifically, [MySQL](http://www.mysql.com) has been chosen in this repository. However, since [MariaDB](https://mariadb.org) is considered more optimized, and a fork off *MySQL*, an [upgrade](https://mariadb.com/kb/en/mariadb/documentation/getting-started/upgrading/upgrading-from-mysql-to-mariadb/) / switch over is fairly simple.
 
 To ensure better integrity of the database, login as `root`, and create a new user.
 
