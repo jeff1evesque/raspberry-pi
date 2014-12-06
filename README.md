@@ -137,7 +137,7 @@ The system partition is the disk partition that contains the [operating system](
 
 - http://en.wikipedia.org/wiki/System_partition_and_boot_partition#Common_definition
 
-The Raspberry Pi requires the *boot loader* partition to be located on the SD card. However, the *system partition* can be stored on another medium, such as the USB flash drive. 
+The Raspberry Pi requires the *boot loader* partition to be located on the SD card. However, the *system partition* can be stored on any another medium, such as the USB flash drive.
 
 The steps required to install a system partition on a USB flash drive, is similar to the earlier configured *boot partition* on the SD card. Plug in the USB flash drive to a computer, format the drive to `MS-DOS (FAT)`, then open up terminal:
 
