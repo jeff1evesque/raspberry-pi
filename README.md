@@ -170,14 +170,14 @@ $ sudo dd if=2014-09-09-wheezy-raspbian.img | sudo pv | sudo dd of=/dev/rdisk4s1
 3276800000 bytes transferred in 650.881670 secs (5034402 bytes/sec)
 ```
 
-Once the USB flash drive contains a system partition, specifically the *Raspbian* operating system image, the boot loader partition needs to know where this image is located. Again, in terminal open up `cmdline.txt` from the earlier configured SD Card (boot partition):
+Once the USB flash drive contains a system partition, specifically the *Raspbian* operating system, the boot loader partition needs to know where this image is located. In terminal, open `cmdline.txt` from the earlier configured SD Card (boot partition):
 
 ```
 cd /Volumes/boot/
 sudo pico cmdline.txt
 ```
 
-**Note:** the above commands were performed on OSX. On linux distributions, navigate to the `/media/boot/` subdirectory, and modify `cmdline.txt`.
+**Note:** on linux distributions, navigate to `/media/boot/` subdirectory to modify `cmdline.txt`.
 
 Next, modfiy the contents of `cmdline.txt`:
 
@@ -191,7 +191,7 @@ by changing the `root` variable as follows:
 dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/sda2 rootfstype=ext4 elevator=deadline rootwait
 ```
 
-This modifies the boot sequence, and tells the Raspberry Pi to boot the system partition from the USB flash drive, instead of the SD card. After the Raspberry Pi has booted, the SD card could be removed, or unmounted from the Raspberry Pi. This means, the SD card is only needed during the initial raspberry pi boot.
+This modifies the boot sequence, and tells the Raspberry Pi to boot the system partition from the USB flash drive, instead of the SD card. By default, the earlier configured SD card would boot the existing Raspbian operating system already on it. Now, after the Raspberry Pi has booted, the SD card could be removed, or unmounted from the Raspberry Pi. This means, the SD card is only needed during the initial boot.
 
 ##Testing / Execution
 
