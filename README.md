@@ -131,6 +131,10 @@ $ sudo rm -rf /raspbian/
 
 **Note:** if `sudo dd of=/dev/disk2` was used instead of `sudo dd of=/dev/rdisk2`, the [transfer rate](http://en.wikipedia.org/wiki/Data_rate_units) would have been roughly `1MiB/s`.
 
+###USB System Partition
+
+The system partition is the disk partition that contains the operating system folder, known as system root. By default, in Linux, operating system files are mounted at `/` (the root directory).
+
 ##Testing / Execution
 
 ###Test Scripts
