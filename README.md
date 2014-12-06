@@ -193,6 +193,17 @@ dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/sda2 rootfsty
 
 This modifies the boot sequence, and tells the Raspberry Pi to boot the system partition from the USB flash drive, instead of the SD card. By default, the earlier configured SD card would boot the existing Raspbian operating system already on it. Now, after the Raspberry Pi has booted, the SD card could be removed, or unmounted. This means, the SD card is only needed during the initial boot.
 
+###MySQL Database
+
+The Raspberry Pi is capable of numerous database management systems, like [MySQL](http://www.mysql.com). To ensure better integrity of the database management system, login as `root`, and create a new user:
+
+```
+$ mysql -u root -p
+mysql> CREATE USER 'authenticated'@'localhost' IDENTIFIED BY '[USER_PASSWORD]';
+mysql> GRANT CREATE, DELETE, DROP, EXECUTE, SELECT, SHOW DATABASES ON *.* TO 'admin'@'localhost';
+mysql> FLUSH PRIVILEGES'
+```
+
 ##Testing / Execution
 
 ###Test Scripts
