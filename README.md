@@ -139,6 +139,46 @@ The system partition is the disk partition that contains the [operating system](
 
 The Raspberry Pi requires the *boot loader* partition to be located on the SD Card. However, the *system partition* can be stored on another medium, such as the USB flash drive. 
 
+The steps required to install a system partition on a USB flash drive is similar to the SD Card boot partition. Plug in the USB flash drive to a computer, format the drive to `MS-DOS (FAT)`, then open up terminal:
+
+```
+$ diskutil list
+/dev/disk0
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *500.1 GB   disk0
+   1:                        EFI EFI                     209.7 MB   disk0s1
+   2:                  Apple_HFS Macintosh HD            499.2 GB   disk0s2
+   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3
+/dev/disk3
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *3.9 GB     disk3
+   1:             Windows_FAT_32 boot                    58.7 MB    disk3s1
+   2:                      Linux                         3.2 GB     disk3s2
+/dev/disk4
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *64.0 GB    disk4
+   1:                 DOS_FAT_32 USB-RPI-1               64.0 GB    disk4s1
+$ diskutil unmountDisk /dev/disk4
+Unmount of all volumes on disk4 was successful
+$ sudo dd if=2014-09-09-wheezy-raspbian.img | sudo pv | sudo dd of=/dev/rdisk4s1 bs=1m
+6400000+0 records in7MiB/s] [                                                                    <=>]
+6400000+0 records out
+3276800000 bytes transferred in 650.785056 secs (5035149 bytes/sec)
+3.05GiB 0:10:50 [ 4.8MiB/s] [                                                                  <=>  ]
+0+50007 records in
+0+50007 records out
+3276800000 bytes transferred in 650.881670 secs (5034402 bytes/sec)
+```
+
+Once the USB flash drive contains a system partition, specifically the *Raspbian* operating system image, the boot loader partition needs to know where this image is located. Again, in terminal open up `cmdline.txt` from the earlier configured SD Card (boot partition):
+
+```
+cd /Volumes/boot/
+sudo pico cmdline.txt
+```
+
+**Note:** the above commands were performed on OSX. On linux distributions, navigate to the `/media/` subdirectory, and modify `cmdline.txt`.
+
 ##Testing / Execution
 
 ###Test Scripts
