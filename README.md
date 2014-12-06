@@ -195,7 +195,7 @@ This modifies the boot sequence, and tells the Raspberry Pi to boot the system p
 
 ###MySQL Database
 
-The Raspberry Pi is capable of numerous database management systems, like [MySQL](http://www.mysql.com). To ensure better integrity of the database management system, login as `root`, and create a new user:
+The Raspberry Pi is capable of numerous database management systems, like [MySQL](http://www.mysql.com). To ensure better integrity of the database management system, login as `root`, and create a new user.
 
 ```
 $ mysql -u root -p
@@ -203,6 +203,8 @@ mysql> CREATE USER 'authenticated'@'localhost' IDENTIFIED BY '[USER_PASSWORD]';
 mysql> GRANT CREATE, DELETE, DROP, EXECUTE, SELECT, SHOW DATABASES ON *.* TO 'admin'@'localhost';
 mysql> FLUSH PRIVILEGES'
 ```
+
+**Note:** the created *mysql* user can be used within code, and helps prevent the `root` user from being compromised.
 
 ##Testing / Execution
 
