@@ -193,21 +193,6 @@ dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/sda2 rootfsty
 
 This modifies the boot sequence, and tells the Raspberry Pi to boot the system partition from the USB flash drive, instead of the SD card. By default, the earlier configured SD card would boot the existing Raspbian operating system already on it. Now, after the Raspberry Pi has booted, the SD card could be removed, or unmounted. This means, the SD card is only needed during the initial boot.
 
-###MySQL Database
-
-The Raspberry Pi is [capable](http://www.raspberrypi.org/forums/viewtopic.php?f=32&t=6335) of various [database management systems](http://en.wikipedia.org/wiki/Database). Specifically, [MySQL](http://www.mysql.com) has been chosen in this repository. However, since [MariaDB](https://mariadb.org) is considered more optimized, and a fork off MySQL, an [upgrade](https://mariadb.com/kb/en/mariadb/documentation/getting-started/upgrading/upgrading-from-mysql-to-mariadb/), or switch is fairly simple.
-
-To ensure better integrity of the database, login as `root`, and create a new user.
-
-```
-$ mysql -u root -p
-mysql> CREATE USER 'authenticated'@'localhost' IDENTIFIED BY '[USER_PASSWORD]';
-mysql> GRANT CREATE, DELETE, DROP, EXECUTE, SELECT, SHOW DATABASES ON *.* TO 'admin'@'localhost';
-mysql> FLUSH PRIVILEGES'
-```
-
-**Note:** the created *mysql* user can be used within code, and helps prevent the `root` user from being compromised.
-
 ##Testing / Execution
 
 ###Test Scripts
