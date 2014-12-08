@@ -267,7 +267,7 @@ Gateway     - 192.168.1.254
 Destination - 192.168.1.0
 ```
 
-Finally, plug in the values into the Raspberry Pi's network configuration file:
+Finally, plug the determined values into the Raspberry Pi's network configuration file:
 
 ```
 $ sudo pico /etc/network/interfaces
