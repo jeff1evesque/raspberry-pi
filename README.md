@@ -195,9 +195,9 @@ This modifies the boot sequence, and tells the Raspberry Pi to boot the system p
 
 ###Static IP
 
-By default, the Raspberry Pi contains a dynamic IP address. This means, each time the raspberry pi boots up, a new IP address is assigned to it. Many times, however, it is more useful to have a fixed, static IP address.
+By default, the Raspberry Pi is assigned a [dynamic IP](http://en.wikipedia.org/wiki/IP_address#Uses_of_dynamic_address_assignment) address. This means, each time the raspberry pi boots up, a new IP address is assigned to it. Many times, however, it is more useful to have a fixed, [static IP](http://en.wikipedia.org/wiki/IP_address#Uses_of_static_addressing) address.
 
-The first step is to list the network interface currently available:
+The first step to acquiring a *static ip* is to list the [network interface](http://en.wikipedia.org/wiki/Network_interface) currently available:
 
 ```
 $ cat /etc/network/interfaces
@@ -212,14 +212,14 @@ wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
 iface default inet dhcp
 ```
 
-The line that reads `iface etho0 inet dhcp`, specifically `dhcp`, indicates that the IP address is being dynamically created by the router.
+The line that reads `iface etho0 inet dhcp`, specifically `dhcp`, indicates that the [IP address](http://en.wikipedia/org/wiki/IP_address) is being dynamically created by the [router](http://en/wikipedia.org/wiki/Router_%28computing%29).
 
 Now, more information on the router is needed:
 
 ```
 $ ifconfig
 eth0      Link encap:Ethernet  HWaddr b8:27:eb:09:af:96
-          inet addr:192.168.1.119  Bcast:192.168.1.255  Mask:255.255.255.0
+          inet addr:192.178.71.179  Bcast:192.178.1.255  Mask:255.255.255.0
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
           RX packets:461 errors:0 dropped:0 overruns:0 frame:0
           TX packets:492 errors:0 dropped:0 overruns:0 carrier:0
@@ -301,7 +301,7 @@ Finally, reboot the machine:
 $ sudo reboot
 ```
 
-Check `ifconfig` as needed, to see if the above changes are reflected. If not, most likely a typo needs to be fixed.
+**Note:** check `ifconfig` as needed, to see if the above changes are reflected. If not, most likely a typo needs to be fixed.
 
 ##Testing / Execution
 
