@@ -193,6 +193,10 @@ dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/sda2 rootfsty
 
 This modifies the boot sequence, and tells the Raspberry Pi to boot the system partition from the USB flash drive, instead of the SD card. By default, the earlier configured SD card would boot the existing Raspbian operating system already on it. Now, after the Raspberry Pi has booted, the SD card could be removed, or unmounted. This means, the SD card is only needed during the initial boot.
 
+###Static IP
+
+By default, the Raspberry Pi contains a dynamic IP address. This means, each time the raspberry pi is booted, it acquires a different IP address. Many times, however, it is more useful to have a fixed, static IP address.
+
 ##Testing / Execution
 
 ###Test Scripts
