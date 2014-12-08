@@ -195,7 +195,7 @@ This modifies the boot sequence, and tells the Raspberry Pi to boot the system p
 
 ###Static IP
 
-By default, the Raspberry Pi contains a dynamic IP address. This means, each time the raspberry pi boots up, a new IP address is assigned to it. Many times, however, it is more useful to have a fixed, static IP address.
+By default, the Raspberry Pi is assigned a dynamic IP address. This means, each time the raspberry pi boots up, a new IP address is assigned to it. Many times, however, it is more useful to have a fixed, static IP address.
 
 The first step to acquiring a *static ip* is to list the network interface currently available:
 
