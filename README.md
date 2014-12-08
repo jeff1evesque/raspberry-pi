@@ -301,7 +301,7 @@ Finally, reboot the machine:
 $ sudo reboot
 ```
 
-Check `ifconfig` as needed, to see if the above changes are reflected. If not, most likely a typo needs to be fixed.
+**Note:** check `ifconfig` as needed, to see if the above changes are reflected. If not, most likely a typo needs to be fixed.
 
 ##Testing / Execution
 
