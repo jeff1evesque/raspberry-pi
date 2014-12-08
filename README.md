@@ -235,14 +235,14 @@ lo        Link encap:Local Loopback
           RX bytes:2592 (2.5 KiB)  TX bytes:2592 (2.5 KiB)
 ```
 
-The following line(s) from above are important:
+The following from above are important:
 
 ```
 eth0      Link encap:Ethernet  HWaddr b8:27:eb:09:af:96
           inet addr:192.178.71.179  Bcast:192.178.1.255  Mask:255.255.255.0
 ```
 
-Specifically, the following are important:
+Specifically, these values:
 
 ```
 inet addr - 192.178.71.179
@@ -260,7 +260,7 @@ Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
 192.168.1.0     0.0.0.0         255.255.255.0   U         0 0          0 eth0
 ```
 
-Specifically, the following are important:
+Specifically, the values:
 
 ```
 Gateway     - 192.168.1.254
@@ -301,7 +301,7 @@ Finally, reboot the machine:
 $ sudo reboot
 ```
 
-Then, check `ifconfig` to see if the above changes are reflected. If not, most likely a typo needs to be fixed.
+Check `ifconfig` as needed, to see if the above changes are reflected. If not, most likely a typo needs to be fixed.
 
 ##Testing / Execution
 
