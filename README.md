@@ -219,7 +219,7 @@ Now, more information on the router is needed:
 ```
 $ ifconfig
 eth0      Link encap:Ethernet  HWaddr b8:27:eb:09:af:96
-          inet addr:192.168.1.119  Bcast:192.168.1.255  Mask:255.255.255.0
+          inet addr:192.178.71.179  Bcast:192.178.1.255  Mask:255.255.255.0
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
           RX packets:461 errors:0 dropped:0 overruns:0 frame:0
           TX packets:492 errors:0 dropped:0 overruns:0 carrier:0
