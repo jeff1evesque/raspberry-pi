@@ -193,6 +193,116 @@ dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/sda2 rootfsty
 
 This modifies the boot sequence, and tells the Raspberry Pi to boot the system partition from the USB flash drive, instead of the SD card. By default, the earlier configured SD card would boot the existing Raspbian operating system already on it. Now, after the Raspberry Pi has booted, the SD card could be removed, or unmounted. This means, the SD card is only needed during the initial boot.
 
+###Static IP
+
+By default, the Raspberry Pi contains a dynamic IP address. This means, each time the raspberry pi boots up, a new IP address is assigned to it. Many times, however, it is more useful to have a fixed, static IP address.
+
+The first step is to list the network interface currently available:
+
+```
+$ cat /etc/network/interfaces
+auto lo
+
+iface lo inet loopback
+iface eth0 inet dhcp
+
+allow-hotplug wlan0
+iface wlan0 inet manual
+wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+iface default inet dhcp
+```
+
+The line that reads `iface etho0 inet dhcp`, specifically `dhcp`, indicates that the IP address is being dynamically created by the router.
+
+Now, more information on the router is needed:
+
+```
+$ ifconfig
+eth0      Link encap:Ethernet  HWaddr b8:27:eb:09:af:96
+          inet addr:192.168.1.119  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:461 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:492 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:42776 (41.7 KiB)  TX bytes:332384 (324.5 KiB)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:33 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:33 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:2592 (2.5 KiB)  TX bytes:2592 (2.5 KiB)
+```
+
+The following from above are important:
+
+```
+eth0      Link encap:Ethernet  HWaddr b8:27:eb:09:af:96
+          inet addr:192.178.71.179  Bcast:192.178.1.255  Mask:255.255.255.0
+```
+
+Specifically, these values:
+
+```
+inet addr - 192.178.71.179
+Bcast     - 192.178.1.255
+Mask      - 255.255.255.0
+```
+
+Also, two additional pieces of information are needed:
+
+```
+$ netstat -nr
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         192.168.1.254   0.0.0.0         UG        0 0          0 eth0
+192.168.1.0     0.0.0.0         255.255.255.0   U         0 0          0 eth0
+```
+
+Specifically, the values:
+
+```
+Gateway     - 192.168.1.254
+Destination - 192.168.1.0
+```
+
+Finally, plug the determined values into the Raspberry Pi's network configuration file:
+
+```
+$ sudo pico /etc/network/interfaces
+```
+
+Specifically, change the line that reads:
+
+```
+iface eth0 inet dhcp
+```
+
+to the following:
+
+```
+iface eth0 inet static
+```
+
+Then, add the values found earlier directly below it:
+
+```
+address 192.178.71.179
+netmask 255.255.255.0
+network 192.168.1.0
+broadcast 192.178.1.255
+gateway 192.168.1.254
+```
+
+Finally, reboot the machine:
+
+```
+$ sudo reboot
+```
+
+Check `ifconfig` as needed, to see if the above changes are reflected. If not, most likely a typo needs to be fixed.
+
 ##Testing / Execution
 
 ###Test Scripts
