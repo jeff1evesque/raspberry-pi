@@ -117,13 +117,13 @@ $ diskutil list
 # copy 'Raspbian' image to SD card
 $ sudo diskutil unmountDisk /dev/disk2
 $ sudo dd if=2014-09-09-wheezy-raspbian.img | sudo pv | sudo dd of=/dev/rdisk2 bs=1m
-6400000+0 records in1MiB/s] [                                                                        <=>       ]
+6400000+0 records in6MiB/s] [                                                             <=>   ]
 6400000+0 records out
-3276800000 bytes transferred in 646.064640 secs (5071938 bytes/sec)
-3.05GiB 0:10:46 [4.84MiB/s] [                                                                          <=>     ]
-0+50000 records in
-0+50000 records out
-3276800000 bytes transferred in 646.141940 secs (5071332 bytes/sec)
+3276800000 bytes transferred in 248.722375 secs (13174528 bytes/sec)
+3.05GiB 0:04:08 [12.6MiB/s] [                                                              <=>  ]
+0+50020 records in
+0+50020 records out
+3276800000 bytes transferred in 248.744377 secs (13173363 bytes/sec)
 
 # delete temporary directory
 $ sudo rm -rf /raspbian/
