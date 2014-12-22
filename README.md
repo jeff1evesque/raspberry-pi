@@ -131,9 +131,9 @@ $ sudo rm -rf /raspbian/
 
 **Note:** [`dd`](http://linux.die.net/man/1/dd) *may* take up to [`20mins`](http://www.raspberrypi.org/forums/viewtopic.php?f=66&t=21995#p309093), with [`pv`](http://linux.die.net/man/1/pv) displaying a [transfer rate](http://en.wikipedia.org/wiki/Data_rate_units) between `3.9-5.23MiB/s`. For example, when using Dane-Elec Class 4, the transfer time is about 11 minutes. This is reasonable, since the SD card is rated at a minimum write of 4MiB/s.
 
-**Note:** if `bs=1m` was included *only* before the first pipe, or excluded entirely from the command, the [transfer rate](http://en.wikipedia.org/wiki/Data_rate_units) could vary between `660-740KiB/s`, or roughly 8x slower.
+**Note:** if `bs=1m` was included *only* before the first pipe, or excluded entirely from the command, the [transfer rate](http://en.wikipedia.org/wiki/Data_rate_units) could vary between `660-740KiB/s` (Dane-Elec Class 4), or roughly 8x slower.
 
-**Note:** if `sudo dd of=/dev/disk2` was used instead of `sudo dd of=/dev/rdisk2`, the [transfer rate](http://en.wikipedia.org/wiki/Data_rate_units) could be `1MiB/s`, or roughly 5x slower.
+**Note:** if `sudo dd of=/dev/disk2` was used instead of `sudo dd of=/dev/rdisk2`, the [transfer rate](http://en.wikipedia.org/wiki/Data_rate_units) could be `1MiB/s` (Dane-Elec Class 4), or roughly 5x slower.
 
 ###USB System Partition
 
