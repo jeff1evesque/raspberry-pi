@@ -24,6 +24,9 @@ Numerous [*linux-based*](http://en.wikipedia.org/wiki/Linux) operating systems c
 The following packages need to be installed through terminal:
 
 ```
+# GIT Core
+sudo apt-get install git-core
+
 # Python Package Manager:
 sudo apt-get install python-setuptools
 sudo easy_install pip
