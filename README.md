@@ -162,7 +162,7 @@ $ diskutil list
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:     FDisk_partition_scheme                        *64.0 GB    disk4
    1:                 DOS_FAT_32 USB-RPI-1               64.0 GB    disk4s1
-$ diskutil unmountDisk /dev/disk4
+$ sudo diskutil unmountDisk /dev/disk4
 Unmount of all volumes on disk4 was successful
 $ sudo dd if=2014-09-09-wheezy-raspbian.img | sudo pv | sudo dd of=/dev/rdisk4s1 bs=1m
 6400000+0 records in7MiB/s] [                                                                    <=>]
