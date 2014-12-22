@@ -38,7 +38,7 @@ sudo apt-get install mysql-server mysql-client
 sudo apt-get install php5 php5-mysql libapache2-mod-php5
 sudo apt-get install phpmyadmin
 
-# Python MySQL Driver:
+# Python MariaDB / MySQL Connector:
 sudo apt-get install python-mysqldb
 ```
 
