@@ -77,21 +77,21 @@ sudo apt-get install mariadb-server mariadb-client
 
 ###FTP Server
 
-To enable the installed FTP server:
+A [file transfer protocol](http://en.wikipedia.org/wiki/File_Transfer_Protocol) (FTP) can be used to transfer files from one [host](http://en.wikipedia.org/wiki/Host_(network)), to another host machine over a [TCP](http://en.wikipedia.org/wiki/Transmission_Control_Protocol)-based network (i.e. [internet](http://en.wikipedia.org/wiki/Internet)). Specifically, the raspberry pi can be enabled with an FTP server. This would allow files to be exchanged with other machines.
+
+To enable an FTP server on the raspberry pi, the file `vsftpd.conf` must be edited:
 
 ```
 $ sudo pico /etc/vsftpd.conf
 ```
 
-Change the following lines
+Specifically, the following lines need to be changed:
 
 - `anonymous_enable=YES` to `anonymous_enable=NO`
 - `#local_enable=YES` to `local_enable=YES`
 - `#write_enable=YES` to `write_enable=YES`
 
-Then, add `force_dot_files=YES` to the bottom of the file.
-
-Finally, restart the FTP server:
+Then, `force_dot_files=YES` must be added to the bottom of the file, before restarting the FTP server:
 
 ```
 $ sudo service vsftpd restart
