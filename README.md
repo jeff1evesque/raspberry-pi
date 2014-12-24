@@ -40,6 +40,9 @@ sudo apt-get install phpmyadmin
 
 # Python MariaDB / MySQL Connector:
 sudo apt-get install python-mysqldb
+
+# FTP
+sudo apt-get install vsftpd
 ```
 
 **Note:** This project assumes [Raspbian](http://www.raspbian.org) (i.e. [Wheezy](http://raspberrypi.org/debian-wheezy-public-beta/)) as the operating system. To upgrade to the newer [Jessie](http://www.raspberrypi.org/forums/viewtopic.php?f=66&t=47944) distribution, modify the following:
