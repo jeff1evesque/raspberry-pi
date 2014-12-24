@@ -77,7 +77,7 @@ sudo apt-get install mariadb-server mariadb-client
 
 ###FTP Server
 
-A file transfer protocol (FPT) can be used to transfer files from one host, to another host machine over a TCP-based network (i.e. internet). Specifically, the raspberry pi can be enabled with an FTP server. This would allow files to be exchanged with other machines.
+A file transfer protocol (FTP) can be used to transfer files from one host, to another host machine over a TCP-based network (i.e. internet). Specifically, the raspberry pi can be enabled with an FTP server. This would allow files to be exchanged with other machines.
 
 To enable an FTP server on the raspberry pi, the file `vsftpd.conf` must be edited:
 
