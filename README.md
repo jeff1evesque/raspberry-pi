@@ -89,7 +89,9 @@ Change the following lines
 - `#local_enable=YES` to `local_enable=YES`
 - `#write_enable=YES` to `write_enable=YES`
 
-Then, add `force_dot_files=YES` to the bottom of the file. Finally, restart the FTP server:
+Then, add `force_dot_files=YES` to the bottom of the file.
+
+Finally, restart the FTP server:
 
 ```
 $ sudo service vsftpd restart
