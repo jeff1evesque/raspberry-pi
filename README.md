@@ -75,6 +75,26 @@ sudo apt-get install mariadb-server mariadb-client
 
 ##Configuration
 
+###FTP Server
+
+To enable the installed FTP server:
+
+```
+$ sudo pico /etc/vsftpd.conf
+```
+
+Change the following lines
+
+- `anonymous_enable=YES` to `anonymous_enable=NO`
+- `#local_enable=YES` to `local_enable=YES`
+- `#write_enable=YES` to `write_enable=YES`
+
+Then, add `force_dot_files=YES` to the bottom of the file. Finally, restart the FTP server:
+
+```
+$ sudo service vsftpd restart
+```
+
 ###GIT
 
 ####GIT Submodule
