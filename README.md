@@ -244,6 +244,15 @@ cd /var/www/html/
 sudo git clone https://[YOUR-USERNAME]@github.com/[YOUR-USERNAME]/raspberry-pi.git [PROJECT-NAME]
 ```
 
+Then, change the *file permissions* for the entire project by issuing the command:
+
+```
+cd /var/
+sudo chown -R jeffrey:sudo www
+```
+
+**Note:** change 'jeffrey' to the user account YOU use.
+
 Then, add the *Remote Upstream*, this way we can pull any merged pull-requests:
 
 ```
@@ -275,8 +284,6 @@ git status
 ```
 
 Now, commit and merge the submodule changes.
-
-###File Permission
 
 ###Static IP
 
