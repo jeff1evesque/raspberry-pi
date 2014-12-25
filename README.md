@@ -204,7 +204,7 @@ To enable the SSH protocol on the Raspberry Pi, enter the following in terminal:
 $ sudo raspi-config
 ```
 
-Scroll down to the *SSH* option, `Enable or disable ssh server`. Then, hit enter, and select `Enable` the SSH server.
+Scroll down to the `ssh` option, `Enable or disable ssh server`. Hit enter, and select `Enable`.
 
 ###FTP Server
 
