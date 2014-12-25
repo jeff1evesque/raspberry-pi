@@ -264,7 +264,7 @@ sudo git submodule update
 
 The above two commands will update submodules within the cloned repository according to the versioned master branch.  If they are already initialized in the cloned repository, then the latter command will suffice.
 
-The following updates submodule(s) to the lastest code-base, becoming available to be committed to the master branch:
+The following updates submodule(s) to the lastest code-base:
 
 ```
 cd /var/www/html/raspberry-pi/
