@@ -194,6 +194,10 @@ dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/sda2 rootfsty
 
 This modifies the boot sequence, and tells the Raspberry Pi to boot the system partition from the USB flash drive, instead of the SD card. By default, the earlier configured SD card would boot the existing Raspbian operating system already on it. Now, after the Raspberry Pi has booted, the SD card could be removed, or unmounted. This means, the SD card is only needed during the initial boot.
 
+###SSH Server
+
+Secure Shell (SSH), sometimes known as *Secure Socket Shell* is a network protocol which allows a client to remotely connect to a host machine over a secure channel, many times on an insecure network.  
+
 ###FTP Server
 
 A [file transfer protocol](http://en.wikipedia.org/wiki/File_Transfer_Protocol) (FTP) can be used to transfer files from one [host](http://en.wikipedia.org/wiki/Host_(network)), to another host machine over a [TCP](http://en.wikipedia.org/wiki/Transmission_Control_Protocol)-based network (i.e. [internet](http://en.wikipedia.org/wiki/Internet)). Specifically, the raspberry pi can be enabled with an FTP server. This would allow files to be exchanged with other machines.
