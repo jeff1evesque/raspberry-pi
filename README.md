@@ -75,34 +75,6 @@ sudo apt-get install mariadb-server mariadb-client
 
 ##Configuration
 
-###FTP Server
-
-A [file transfer protocol](http://en.wikipedia.org/wiki/File_Transfer_Protocol) (FTP) can be used to transfer files from one [host](http://en.wikipedia.org/wiki/Host_(network)), to another host machine over a [TCP](http://en.wikipedia.org/wiki/Transmission_Control_Protocol)-based network (i.e. [internet](http://en.wikipedia.org/wiki/Internet)). Specifically, the raspberry pi can be enabled with an FTP server. This would allow files to be exchanged with other machines.
-
-To enable an FTP server on the raspberry pi, the file `vsftpd.conf` must be edited:
-
-```
-$ sudo pico /etc/vsftpd.conf
-```
-
-Specifically, the following lines need to be changed:
-
-- `anonymous_enable=YES` to `anonymous_enable=NO`
-- `#local_enable=YES` to `local_enable=YES`
-- `#write_enable=YES` to `write_enable=YES`
-
-Then, `force_dot_files=YES` must be added to the bottom of the file, before restarting the FTP server:
-
-```
-$ sudo service vsftpd restart
-```
-
-###GIT
-
-####GIT Submodule
-
-###File Permission
-
 ###SD Boot Partition
 
 The [SD Card](http://en.wikipedia.org/wiki/Secure_Digital) is an important and integral part of the [Raspberry Pi](http://en.wikipedia.com/wiki/Raspberry_Pi). When a [power supply](http://www.raspberrypi.org/help/faqs/#power) is provided, the Raspberry Pi seeks a [boot loader](http://en.wikipedia.org/wiki/Booting#BOOT-LOADER) [partition](http://en.wikipedia.org/wiki/Disk_partitioning) from its SD Card slot. If either the SD Card, or boot loader partition is absent, the Raspberry Pi will not start-up.
@@ -159,6 +131,34 @@ $ sudo rm -rf /raspbian/
 **Note:** if `bs=1m` was included *only* before the first pipe, or excluded entirely from the command, the [transfer rate](http://en.wikipedia.org/wiki/Data_rate_units) could vary between `660-740KiB/s` ([Dane-Elec](http://www.newdane.com/?page_id=1255), Class 4), or roughly 8x slower.
 
 **Note:** if `sudo dd of=/dev/disk2` was used instead of `sudo dd of=/dev/rdisk2`, the [transfer rate](http://en.wikipedia.org/wiki/Data_rate_units) could be `1MiB/s` ([Dane-Elec](http://www.newdane.com/?page_id=1255), Class 4), or roughly 5x slower.
+
+###FTP Server
+
+A [file transfer protocol](http://en.wikipedia.org/wiki/File_Transfer_Protocol) (FTP) can be used to transfer files from one [host](http://en.wikipedia.org/wiki/Host_(network)), to another host machine over a [TCP](http://en.wikipedia.org/wiki/Transmission_Control_Protocol)-based network (i.e. [internet](http://en.wikipedia.org/wiki/Internet)). Specifically, the raspberry pi can be enabled with an FTP server. This would allow files to be exchanged with other machines.
+
+To enable an FTP server on the raspberry pi, the file `vsftpd.conf` must be edited:
+
+```
+$ sudo pico /etc/vsftpd.conf
+```
+
+Specifically, the following lines need to be changed:
+
+- `anonymous_enable=YES` to `anonymous_enable=NO`
+- `#local_enable=YES` to `local_enable=YES`
+- `#write_enable=YES` to `write_enable=YES`
+
+Then, `force_dot_files=YES` must be added to the bottom of the file, before restarting the FTP server:
+
+```
+$ sudo service vsftpd restart
+```
+
+###GIT
+
+####GIT Submodule
+
+###File Permission
 
 ###USB System Partition
 
