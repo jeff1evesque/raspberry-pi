@@ -285,8 +285,6 @@ git status
 
 Now, commit and merge the submodule changes.
 
-###File Permission
-
 ###Static IP
 
 By default, the Raspberry Pi is assigned a [dynamic IP](http://en.wikipedia.org/wiki/IP_address#Uses_of_dynamic_address_assignment) address. This means, each time the raspberry pi boots up, a new IP address is assigned to it. Many times, however, it is more useful to have a fixed, [static IP](http://en.wikipedia.org/wiki/IP_address#Uses_of_static_addressing) address.
