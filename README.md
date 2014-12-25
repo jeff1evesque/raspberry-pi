@@ -230,6 +230,27 @@ $ sudo service vsftpd restart
 
 ###GIT
 
+Since we installed GIT earlier, we have to remember to configure our GIT user.  Only change the values within the double quotes (remove the quotes for the email):
+
+```
+git config --global user.email "YOUR-EMAIL@DOMAIN.COM"
+git config --global user.name "YOUR-NAME"
+```
+
+Fork this project in your GitHub account, then clone your repository:
+
+```
+cd /var/www/html/
+sudo git clone https://[YOUR-USERNAME]@github.com/[YOUR-USERNAME]/raspberry-pi.git [PROJECT-NAME]
+```
+
+Then, add the *Remote Upstream*, this way we can pull any merged pull-requests:
+
+```
+cd /var/www/html/raspberry-pi/
+git remote add upstream https://github.com/[YOUR-USERNAME]/raspberry-pi.git
+```
+
 ####GIT Submodule
 
 ###File Permission
