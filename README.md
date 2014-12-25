@@ -196,7 +196,7 @@ This modifies the boot sequence, and tells the Raspberry Pi to boot the system p
 
 ###SSH Server
 
-Secure Shell (SSH), sometimes known as *Secure Socket Shell*, is a network protocol which allows a client to remotely connect to a host machine over a secure channel, many times on an insecure network. This allows the client to run various commands on the designated host machine.
+[Secure Shell](http://en.wikipedia.org/wiki/Secure_Shell) (SSH), sometimes known as *Secure Socket Shell*, is a [network protocol](http://en.wikipedia.org/wiki/Network_protocol) which allows a client to remotely connect to a host machine over a [secure channel](http://en.wikipedia.org/wiki/Secure_channel), many times on an insecure network. This allows the client to run various commands on the designated host machine.
 
 To enable the SSH protocol on the Raspberry Pi, enter the following in terminal:
 
