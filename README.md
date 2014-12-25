@@ -196,7 +196,15 @@ This modifies the boot sequence, and tells the Raspberry Pi to boot the system p
 
 ###SSH Server
 
-Secure Shell (SSH), sometimes known as *Secure Socket Shell*, is a network protocol which allows a client to remotely connect to a host machine over a secure channel, many times on an insecure network.  
+Secure Shell (SSH), sometimes known as *Secure Socket Shell*, is a network protocol which allows a client to remotely connect to a host machine over a secure channel, many times on an insecure network. This allows the client to run various commands on the designated host machine.
+
+To enable the SSH protocol on the Raspberry Pi, enter the following in terminal:
+
+```
+$ sudo raspi-config
+```
+
+Scroll down to the *SSH* option, `Enable or disable ssh server`. Then, hit enter, and select `Enable` the SSH server.
 
 ###FTP Server
 
