@@ -244,7 +244,7 @@ cd /var/www/html/
 sudo git clone https://[YOUR-USERNAME]@github.com/[YOUR-USERNAME]/raspberry-pi.git [PROJECT-NAME]
 ```
 
-Then change the *file permissions* for the entire project by issuing the command:
+Then, change the *file permissions* for the entire project by issuing the command:
 
 ```
 cd /var/
