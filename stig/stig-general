@@ -21,9 +21,14 @@ sudo sed -i 's/XKBLAYOUT=".*"/XKBLAYOUT="us"/g' /etc/default/keyboard
 ## disable bluetooth
 sudo printf '\ndtoverlay=pi3-disable-bt' >> /boot/config.txt
 
-## require login password with gui
+## gui configurations
 if [ -f '/etc/lightdm/lightdm.conf' ]; then
+    ## require login password with gui
     sudo sed -i 's/autologin-user=pi/#autologin-user=pi/g' /etc/lightdm/lightdm.conf
+
+    ## enforce screensaver with password
+    sudo apt-get -y install xscreensaver
+    sudo sed -i 's/\*lock::[[:space:]]*False/\*lock:                  True/g' /etc/X11/app-defaults/XScreenSaver
 fi
 
 ## change default 'raspberry' password
