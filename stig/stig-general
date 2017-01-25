@@ -11,12 +11,15 @@ if [ -f '/etc/ssh/sshd_config' ]; then
 
     ## disallow more than 5 failed ssh login
     sudo chmod 777 /etc/ssh/sshd_config
-    sudo printf '\nMaxAuthTries 5\n' >> /etc/ssh/sshd_config
+    sudo printf '\nMaxAuthTries 5' >> /etc/ssh/sshd_config
     sudo chmod 644 /etc/ssh/sshd_config
 fi
 
-## ensure us layout keyboard
+## ensure us keyboard layout
 sudo sed -i 's/XKBLAYOUT=".*"/XKBLAYOUT="us"/g' /etc/default/keyboard
+
+## disable bluetooth
+sudo printf '\ndtoverlay=pi3-disable-bt' >> /boot/config.txt
 
 ## require login password with gui
 if [ -f '/etc/lightdm/lightdm.conf' ]; then
