@@ -1,0 +1,29 @@
+#!/bin/bash
+
+## local variables
+CORRECT_USER='n'
+
+## run logic with valid input
+while [ "${CORRECT_USER,,}" != 'y' ] && \
+    [ "${CORRECT_USER,,}" != 'yes' ] && \
+    [ "${CORRECT_USER,,}" != 'true' ] && \
+    [ "${CORRECT_USER,,}" != 'ok' ]; do
+
+    ## prompt input
+    echo 'We need to rename the default \'pi\' username.'
+    read -p 'Enter new username > ' NEW_USER
+    read -p 'Is this correct (y) > ' CORRECT_USER
+
+    ## rename 'pi' username to supplied input
+    systemctl stop autologin@tty1
+    systemctl daemon-reload
+    usermod -l "$NEW_USER" -d /home/"$NEW_USER" -m pi
+    ls -al /home
+    mkdir /home/"$NEW_USER"
+    chown "$NEW_USER":"$NEW_USER" /home/"$NEW_USER"
+    ls -al /home
+    systemctl start autologin@tty1
+
+    ## reboot
+    reboot
+done

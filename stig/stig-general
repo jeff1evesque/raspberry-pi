@@ -1,0 +1,33 @@
+#!/bin/bash
+
+## replace default ssh keys
+sudo rm -rf /etc/ssh/ssh_host_* && sudo dpkg-reconfigure openssh-server
+
+## configure ssh
+if [ -f '/etc/ssh/sshd_config' ]; then
+    ## disallow root ssh
+    sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
+    sudo sed -i 's/PermitRootLogin without-password/PermitRootLogin no/g' /etc/ssh/sshd_config
+
+    ## disallow more than 5 failed ssh login
+    sudo chmod 777 /etc/ssh/sshd_config
+    sudo printf '\nMaxAuthTries 5\n' >> /etc/ssh/sshd_config
+    sudo chmod 644 /etc/ssh/sshd_config
+fi
+
+## ensure us layout keyboard
+sudo sed -i 's/XKBLAYOUT=".*"/XKBLAYOUT="us"/g' /etc/default/keyboard
+
+## require login password with gui
+if [ -f '/etc/lightdm/lightdm.conf' ]; then
+    sudo sed -i 's/autologin-user=pi/#autologin-user=pi/g' /etc/lightdm/lightdm.conf
+fi
+
+## change default 'raspberry' password
+passwd
+
+## set root password
+sudo passwd root
+
+## reboot: some configurations require reboot
+sudo reboot
