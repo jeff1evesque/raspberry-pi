@@ -3,6 +3,9 @@
 ## local variables
 CORRECT_USER='n'
 
+## disable 'sudo su'
+sed -i 's/^root[[:space:]]ALL=(ALL:ALL)[[:space:]]ALL/#root   ALL=(ALL:ALL) ALL/g' /etc/sudoers
+
 ## run logic with valid input
 while [ "${CORRECT_USER,,}" != 'y' ] && \
     [ "${CORRECT_USER,,}" != 'yes' ] && \
