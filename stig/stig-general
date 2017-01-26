@@ -18,8 +18,13 @@ fi
 ## ensure us keyboard layout
 sudo sed -i 's/^XKBLAYOUT=".*"/XKBLAYOUT="us"/g' /etc/default/keyboard
 
+## disable wifi
+printf 'blacklist brcmfmac\n' >> /etc/modprobe.d/raspi-blacklist.conf
+printf 'blacklist brcmutil\n' >> /etc/modprobe.d/raspi-blacklist.conf
+
 ## disable bluetooth
-sudo printf '\ndtoverlay=pi3-disable-bt' >> /boot/config.txt
+printf 'blacklist btbcm\n' >> /etc/modprobe.d/raspi-blacklist.conf
+printf 'blacklist hci_uart\n' >> /etc/modprobe.d/raspi-blacklist.conf
 
 ## gui configurations
 if [ -f '/etc/lightdm/lightdm.conf' ]; then
