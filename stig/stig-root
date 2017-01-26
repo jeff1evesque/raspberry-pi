@@ -4,7 +4,7 @@
 CORRECT_USER='n'
 
 ## disable su for all users
-printf "\n# Disable use of 'sudo su'" >> /etc/pamd.d/su
+printf "\n# Disable 'su' for all users" >> /etc/pamd.d/su
 printf '\nauth required pam_wheel.so use_uid' >> /etc/pam.d/su
 
 ## run logic with valid input
