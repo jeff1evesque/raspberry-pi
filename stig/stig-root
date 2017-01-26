@@ -3,8 +3,9 @@
 ## local variables
 CORRECT_USER='n'
 
-## disable 'sudo su'
-sed -i 's/^root[[:space:]]ALL=(ALL:ALL)[[:space:]]ALL/#root   ALL=(ALL:ALL) ALL/g' /etc/sudoers
+## disable su for all users
+printf "\n# Disable 'su' for all users" >> /etc/pamd.d/su
+printf '\nauth required pam_wheel.so use_uid' >> /etc/pam.d/su
 
 ## run logic with valid input
 while [ "${CORRECT_USER,,}" != 'y' ] && \
@@ -16,6 +17,9 @@ while [ "${CORRECT_USER,,}" != 'y' ] && \
     echo 'We need to rename the default \'pi\' username.'
     read -p 'Enter new username > ' NEW_USER
     read -p 'Is this correct (y) > ' CORRECT_USER
+
+    ## enforce limited group
+    user -G sudo "$NEW_USER"
 
     ## rename 'pi' username to supplied input
     systemctl stop autologin@tty1
