@@ -36,7 +36,7 @@ if [ -f '/etc/lightdm/lightdm.conf' ]; then
     sudo sed -i 's/^\*lock:[[:space:]]*False/\*lock:                  True/g' /etc/X11/app-defaults/XScreenSaver
 
     ## activate screensaver after 5 minute idle
-    sudo sed -i 's/^\*timeout:[[:space:]].*/\*timeout:               0:05:00/g' /etc/X11/app-defaults/XScreenSaver
+    sudo sed -i 's/^\*timeout:[[:space:]].*/\*timeout:               0:02:00/g' /etc/X11/app-defaults/XScreenSaver
 fi
 
 ## change default 'raspberry' password
