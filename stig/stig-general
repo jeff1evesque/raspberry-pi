@@ -6,8 +6,8 @@ sudo rm -rf /etc/ssh/ssh_host_* && sudo dpkg-reconfigure openssh-server
 ## configure ssh
 if [ -f '/etc/ssh/sshd_config' ]; then
     ## disallow root ssh
-    sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
-    sudo sed -i 's/PermitRootLogin without-password/PermitRootLogin no/g' /etc/ssh/sshd_config
+    sudo sed -i 's/^PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
+    sudo sed -i 's/^PermitRootLogin without-password/PermitRootLogin no/g' /etc/ssh/sshd_config
 
     ## disallow more than 5 failed ssh login
     sudo chmod 777 /etc/ssh/sshd_config
@@ -16,7 +16,7 @@ if [ -f '/etc/ssh/sshd_config' ]; then
 fi
 
 ## ensure us keyboard layout
-sudo sed -i 's/XKBLAYOUT=".*"/XKBLAYOUT="us"/g' /etc/default/keyboard
+sudo sed -i 's/^XKBLAYOUT=".*"/XKBLAYOUT="us"/g' /etc/default/keyboard
 
 ## disable bluetooth
 sudo printf '\ndtoverlay=pi3-disable-bt' >> /boot/config.txt
@@ -24,11 +24,14 @@ sudo printf '\ndtoverlay=pi3-disable-bt' >> /boot/config.txt
 ## gui configurations
 if [ -f '/etc/lightdm/lightdm.conf' ]; then
     ## require login password with gui
-    sudo sed -i 's/autologin-user=pi/#autologin-user=pi/g' /etc/lightdm/lightdm.conf
+    sudo sed -i 's/^autologin-user=pi/#autologin-user=pi/g' /etc/lightdm/lightdm.conf
 
     ## enforce screensaver with password
     sudo apt-get -y install xscreensaver
-    sudo sed -i 's/\*lock::[[:space:]]*False/\*lock:                  True/g' /etc/X11/app-defaults/XScreenSaver
+    sudo sed -i 's/^\*lock::[[:space:]]*False/\*lock:                  True/g' /etc/X11/app-defaults/XScreenSaver
+
+    ## activate screensaver after 5 minute idle
+    sudo sed -i 's/^\*timeout:[[:space:]].*/\*timeout:               0:05:00/g' /etc/X11/app-defaults/XScreenSaver
 fi
 
 ## change default 'raspberry' password
