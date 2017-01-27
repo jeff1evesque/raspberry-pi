@@ -1,0 +1,7 @@
+#!/bin/bash
+
+## create guest account
+useradd guest
+
+## set 'guest' password
+passwd guest
