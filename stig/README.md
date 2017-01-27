@@ -1,4 +1,4 @@
-# Stig File(s)
+# Stig script(s)
 
 - `stig-general`: performs general hardening, and should be executed as non `root`.
   - this should be run at least by the default `pi` user.
