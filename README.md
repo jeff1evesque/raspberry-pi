@@ -7,11 +7,14 @@ The [Raspberry Pi](http://en.wikipedia.org/wiki/Raspberry_Pi) is a credit-card s
 
 The major schematic are as follows:
 
-                | Model A       | Model B       | Model B+       |
----------------:| --------------|:-------------:| --------------:|
-**Processor**   | 700 MHz       | 700 MHz       | 700 MHz        |
-**RAM**         | 256 MB        | 512 MB        | 512 MB         |
-**USB Ports**   | Single USB    | Dual USB      | Quad USB       |
+                | Model A       | Model B       | Model B+       | Model 3B       | Model Zero     |
+---------------:| --------------|:-------------:|:--------------:|:--------------:| --------------:|
+**Processor**   | 700 MHz       | 900 MHz       | 700 MHz        | 1.2 GHz        | 1 GHz          |
+**RAM**         | 256 MB        | 1 GB          | 512 MB         | 1 GB           | 512 MB         |
+**USB Ports**   | Single USB    | Quad USB      | Quad USB       | Quad USB       | Double Micro   |
+
+**Note:** one of the [micro usb](https://learn.adafruit.com/introducing-the-raspberry-pi-zero/a-tour-of-the-pi-zero#usb-port) ports,
+ on the [model zero](https://learn.adafruit.com/introducing-the-raspberry-pi-zero), is required for a power source.
 
 Numerous [*linux-based*](http://en.wikipedia.org/wiki/Linux) operating systems can be run on the [Raspberry Pi](http://en.wikipedia.org/wiki/Raspberry_Pi). The [Rasbian](http://www.raspbian.org/) is generally preferred, since it is tailored specific to the Pi.  Other operating systems such as [Risc](https://www.riscosopen.org/), [Plan 9](http://plan9.bell-labs.com/plan9/), [Android](http://www.android.com/), and [Arch](http://arch-os.com/) is just as savy.  Though, not recommended, linux distributions such as [Ubuntu](www.ubuntu.com) will work.  Keep in mind, the requirements of such operating systems tend to require more resources than the Pi has to offer (so grab an older distro).
 
